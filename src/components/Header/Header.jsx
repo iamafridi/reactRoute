@@ -6,6 +6,7 @@ const Header = () => {
             <nav>
                 <span>My Fucking Website</span> <br />
                 <Link to="/" >Home</Link>
+                <Link to="/users" >User</Link>
                 <Link to="/about" >About</Link>
                 <Link to="/contact" >Contact US</Link>
                 
