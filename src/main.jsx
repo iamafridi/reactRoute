@@ -13,41 +13,43 @@ import User from './components/User/Users.jsx';
 import Users from './components/User/Users.jsx';
 import UserDetail from './components/UserDetail/UserDetail.jsx';
 import Posts from './components/Posts/Posts.jsx';
+import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home></Home>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/about',
-        element:<About></About>
+        element: <About></About>
       },
       {
-        path:'/contact',
+        path: '/contact',
         element: <Contact></Contact>
       },
       {
-        path:'/users',
-        loader: ()=> fetch('https://jsonplaceholder.typicode.com/users'),
+        path: '/users',
+        loader: () => fetch('https://jsonplaceholder.typicode.com/users'),
         element: <Users></Users>
       },
       {
-        path:'/user/:userId',
-        loader: ({params})=> fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`),
+        path: '/user/:userId',
+        loader: ({ params }) => fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`),
         element: <UserDetail></UserDetail>
       },
       {
         path: '/posts',
-        loader:()=> fetch("https://jsonplaceholder.typicode.com/posts"),
+        loader: () => fetch("https://jsonplaceholder.typicode.com/posts"),
         element: <Posts></Posts>
       }
     ]
   },
-]); 
+]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-       <RouterProvider router={router} />
+    <RouterProvider router={router} />
   </React.StrictMode>,
 )

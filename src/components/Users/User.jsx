@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 
-const User = ({user}) => {
-    const {id, name, website ,username , email, phone } = user;
+const User = ({ user }) => {
+    const { id, name, website, username, email, phone } = user;
 
     const userStyle = {
-        border : '2px solid blue',
-        padding : '5px',
+        border: '2px solid blue',
+        padding: '5px',
         borderRadius: '20px'
     }
 
