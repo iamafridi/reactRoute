@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
         <div>
-            <p><small>Tumake Donita pata Ashar jonno</small></p>
+            <p><small>Tumake Doniya pata Ashar jonno</small></p>
         </div>
     );
 };
